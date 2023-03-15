@@ -1,3 +1,5 @@
+import { PatientsService } from './../../../patients.service';
+import { Patient } from './../../../patient';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  allPatientsSource: Patient[] = [];
+  displayedColumns: string[] = ['name', 'cpf',  'birthDate', 'actions'];
+
+
+  constructor(private patientsService: PatientsService) { }
 
   ngOnInit(): void {
+    this.get();
   }
 
+  get() {
+    this.patientsService.getAll().subscribe((data) => {
+      this.allPatientsSource = data;
+    });
+  }
 }
