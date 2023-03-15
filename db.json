@@ -1,0 +1,32 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Irlan Freitas",
+      "birthDate": "26/11/1995",
+      "cpf": "88822233311",
+      "occupation": "Software Engineer"
+    },
+    {
+      "id": 2,
+      "name": "Irlan Freitas",
+      "birthDate": "26/11/1995",
+      "cpf": "88822233322",
+      "occupation": "Software Engineer"
+    },
+    {
+      "id": 3,
+      "name": "Irlan Freitas",
+      "birthDate": "26/11/1995",
+      "cpf": "88822233333",
+      "occupation": "Software Engineer"
+    },
+    {
+      "id": 4,
+      "name": "Irlan Freitas",
+      "birthDate": "26/11/1995",
+      "cpf": "88822233344",
+      "occupation": "Software Engineer"
+    }
+  ]
+}
