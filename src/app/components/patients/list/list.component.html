@@ -1,30 +1,42 @@
-<div class="container allstudents-container">
-  <table mat-table [dataSource]="allPatientsSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="allPatientsSource" class="container mat-elevation-z8">
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="cpf">
-      <th mat-header-cell *matHeaderCellDef>Cpf</th>
-      <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
-    </ng-container>
+  <ng-container matColumnDef="cpf">
+    <th mat-header-cell *matHeaderCellDef>Cpf</th>
+    <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="birthDate">
-      <th mat-header-cell *matHeaderCellDef>Nascimento</th>
-      <td mat-cell *matCellDef="let element">{{ element.birthDate }}</td>
-    </ng-container>
+  <ng-container matColumnDef="birthDate">
+    <th mat-header-cell *matHeaderCellDef>Nascimento</th>
+    <td mat-cell *matCellDef="let element">{{ element.birthDate }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <!-- <mat-header-cell  *matHeaderCellDef > Actions </mat-header-cell> -->
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-button>Excluir</button>
-      </td>
-    </ng-container>
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" (click)="edit(element)">
+      <button mat-button >Editar</button>
+      <!-- <button mat-fab color="warn" aria-label="Edit Row" (click)="edit(element)">
+        <mat-icon>edit</mat-icon>
+      </button> -->
+    </td>
+    <!-- <mat-cell *matCellDef="let myRowData">
+      <button mat-fab color="warn" aria-label="Edit Row" (click)="edit(myRowData)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-cell> -->
+  </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div>
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" (click)="delete(element)">
+      <button mat-button >Excluir</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

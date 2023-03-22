@@ -15,14 +15,19 @@ import { CardComponent } from './components/card/card.component';
 import { ListComponent } from './components/patients/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HandleComponent } from './components/patients/handle/handle.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSortModule } from '@angular/material/sort';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import { MatTableModule } from '@angular/material/table'
     HandleComponent,
   ],
   imports: [
+    CommonModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatSortModule,
+    MatRadioModule,
     MatTableModule,
     MatExpansionModule,
     MatButtonModule,
@@ -43,6 +53,7 @@ import { MatTableModule } from '@angular/material/table'
     MatCardModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatSidenavModule,
     MatToolbarModule,

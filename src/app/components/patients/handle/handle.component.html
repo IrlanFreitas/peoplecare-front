@@ -1,62 +1,59 @@
-<div class="container add-student-container">
-      <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header style="text-align: center;">
-            <h3 style="text-align: center"></h3>
-            Pacientes
-          </mat-expansion-panel-header>
+<mat-accordion class="add-student-container">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header style="text-align: center;">
+      <h3 style="text-align: center"></h3>
+      Pacientes
+    </mat-expansion-panel-header>
 
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Gestão de paciente
-            </mat-panel-title>
-            <mat-panel-description>
-              {{newPatient ? 'Adicionar' : 'Editar'}} paciente
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+  </mat-expansion-panel>
 
-          <div>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Gestão de paciente
+      </mat-panel-title>
+      <mat-panel-description>
+        {{newPatient ? 'Adicionar' : 'Editar'}} paciente
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-            <div>
-              <mat-form-field appearance="outline" class="form-element">
-                <mat-label>Nome</mat-label>
-                <input matInput [(ngModel)]="patientForm.name" />
-              </mat-form-field>
-            </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-            <!-- <div>
-            <mat-form-field appearance="outline" class="form-element">
-              <mat-label>Last Name</mat-label>
-              <input matInput [(ngModel)] ="studentForm.lastName"/>
-            </mat-form-field>
-          </div> -->
-            <!-- <div>
-            <mat-form-field appearance="outline" class="form-element">
-              <mat-label>Gender</mat-label>
-              <mat-select [(ngModel)] ="studentForm.gender">
-                <mat-option value="Male">Male</mat-option>
-                <mat-option value="Female">Female</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div> -->
-            <!-- <div>
-            <mat-form-field appearance="outline" class="form-element">
-              <mat-label>Age</mat-label>
-              <input matInput  type="number" [(ngModel)] ="studentForm.age"/>
-            </mat-form-field>
-          </div> -->
-            <div>
-              <button mat-raised-button color="primary" (click)="create()">Cadastrar</button>
-            </div>
-          </div>
+      <mat-form-field appearance="outline" style="margin-right: 5px;">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="form.controls['name'].errors?.['minlength']">
+          Por favor, nomes com mais de 3 caracteres
+        </mat-error>
+        <mat-error *ngIf="form.controls['name'].errors?.['required']">Nome é obrigatório</mat-error>
+      </mat-form-field>
 
-        </mat-expansion-panel>
-      </mat-accordion>
+      <mat-form-field appearance="outline" style="margin-right: 5px;">
+        <mat-label>Cpf</mat-label>
+        <input matInput inputmode="numeric" formControlName="cpf">
+        <!-- <wj-input-mask id="cpf" [mask]="'000.000.000-00'"  [isRequired]="true" [value]="''" formControlName="cpf"></wj-input-mask> -->
+        <mat-error *ngIf="form.controls['cpf'].errors?.['required']">Cpf é obrigatório</mat-error>
+      </mat-form-field>
 
+      <mat-form-field appearance="outline" style="margin-right: 5px;">
+        <mat-label>Profissão</mat-label>
+        <input matInput formControlName="occupation">
+      </mat-form-field>
 
+      <mat-form-field appearance="outline">
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.controls['cpf'].errors?.['required']">Data de nascimento é obrigatório</mat-error>
+      </mat-form-field>
 
+      <div mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+      </div>
+    </form>
 
-    <!-- </mat-card> -->
-</div>
+  </mat-expansion-panel>
+</mat-accordion>

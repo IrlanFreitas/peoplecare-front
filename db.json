@@ -4,29 +4,50 @@
       "id": 1,
       "name": "Irlan Freitas",
       "birthDate": "26/11/1995",
-      "cpf": "88822233311",
+      "cpf": "888.222.333-11",
       "occupation": "Software Engineer"
     },
     {
       "id": 2,
       "name": "Irlan Freitas",
       "birthDate": "26/11/1995",
-      "cpf": "88822233322",
+      "cpf": "888.222.333-22",
       "occupation": "Software Engineer"
     },
     {
       "id": 3,
       "name": "Irlan Freitas",
       "birthDate": "26/11/1995",
-      "cpf": "88822233333",
+      "cpf": "888.222.333-33",
       "occupation": "Software Engineer"
     },
     {
       "id": 4,
       "name": "Irlan Freitas",
       "birthDate": "26/11/1995",
-      "cpf": "88822233344",
+      "cpf": "888.222.333-44",
       "occupation": "Software Engineer"
+    },
+    {
+      "name": "axios",
+      "birthDate": "2023-03-21T03:00:00.000Z",
+      "cpf": "Html, Css e Js",
+      "occupation": "Desafios",
+      "id": 5
+    },
+    {
+      "name": "Vick Marlley",
+      "birthDate": "1997-02-04T02:00:00.000Z",
+      "cpf": "88913183",
+      "occupation": "Advogata",
+      "id": 6
+    },
+    {
+      "name": "Vick Marlley",
+      "birthDate": "1997-02-04T02:00:00.000Z",
+      "cpf": "88913183",
+      "occupation": "Advogata",
+      "id": 7
     }
   ]
 }
